@@ -1,0 +1,92 @@
+
+##############################
+####  4 PERSON CORRIDOR   ####
+##############################
+
+world:
+  px_per_cm: 0.8
+  screen_w: 800
+  screen_h: 1200
+  bg_color: [245, 245, 245]
+  fps: 60
+  steps: 12
+  step_plan_iters: 12
+
+agents:
+  - name: a0
+    radius: 25
+    start: [180, 260]
+    goal: [620, 940]
+    color: [220, 50, 50]
+    path: {type: straight, num_points: 100}
+
+  - name: a1
+    radius: 25
+    start: [620, 940]
+    goal: [180, 260]
+    color: [50, 50, 220]
+    path: {type: straight, num_points: 100}
+
+  - name: a2
+    radius: 25
+    start: [620, 260]
+    goal: [180, 940]
+    color: [50, 180, 50]
+    path: {type: straight, num_points: 100}
+
+  - name: a3
+    radius: 25
+    start: [180, 940]
+    goal: [620, 260]
+    color: [220, 140, 40]
+    path: {type: straight, num_points: 100}
+
+obstacles:
+  # =========================
+  # PAREDES DEL PASILLO
+  # =========================
+  - name: wall_left
+    type: rectangle
+    center: [-30, 600]
+    size: [200, 1200]
+
+  - name: wall_right
+    type: rectangle
+    center: [830, 600]
+    size: [200, 1200]
+
+
+  # =========================
+  # PERSONAS ESTÁTICAS (4)
+  # =========================
+  - name: person_1
+    type: circle
+    position: [220, 400]
+    radius: 35
+    sdf_path: "/home/vrs/GBP_ROS_WS/src/gbp_system/src/gbp_system/AdamSim/data/models/person_standing/model.sdf"
+    z: 0.0
+    yaw_deg: 0.0
+
+  - name: person_2
+    type: circle
+    position: [520, 520]
+    radius: 35
+    sdf_path: "/home/vrs/GBP_ROS_WS/src/gbp_system/src/gbp_system/AdamSim/data/models/person_standing/model.sdf"
+    z: 0.0
+    yaw_deg: 180.0
+
+  - name: person_3
+    type: circle
+    position: [260, 720]
+    radius: 35
+    sdf_path: "/home/vrs/GBP_ROS_WS/src/gbp_system/src/gbp_system/AdamSim/data/models/person_standing/model.sdf"
+    z: 0.0
+    yaw_deg: 90.0
+
+  - name: person_4
+    type: circle
+    position: [500, 880]
+    radius: 35
+    sdf_path: "/home/vrs/GBP_ROS_WS/src/gbp_system/src/gbp_system/AdamSim/data/models/person_standing/model.sdf"
+    z: 0.0
+    yaw_deg: -90.0

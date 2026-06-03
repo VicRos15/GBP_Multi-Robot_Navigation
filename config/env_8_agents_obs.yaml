@@ -1,0 +1,108 @@
+##############################
+####  ROOM MIXED OBJECTS  ####
+##############################
+
+world:
+  px_per_cm: 0.8
+  screen_w: 1400
+  screen_h: 1200
+  bg_color: [245, 245, 245]
+  fps: 60
+  steps: 8
+  step_plan_iters: 12
+
+agents:
+  - name: a0
+    radius: 25
+    start: [250, 250]
+    goal: [1050, 950]
+    color: [220, 50, 50]
+    path:
+      type: straight
+      num_points: 100
+
+  - name: a1
+    radius: 25
+    start: [1050, 950]
+    goal: [250, 250]
+    color: [50, 50, 220]
+    path:
+      type: straight
+      num_points: 100
+
+obstacles:
+  # =========================
+  # PAREDES DE LA HABITACIÓN
+  # =========================
+  - name: wall_top
+    type: rectangle
+    center: [700, 100]
+    size: [1200, 40]
+
+  - name: wall_bottom
+    type: rectangle
+    center: [700, 1100]
+    size: [1200, 40]
+
+  - name: wall_left
+    type: rectangle
+    center: [100, 600]
+    size: [40, 1000]
+
+  - name: wall_right
+    type: rectangle
+    center: [1300, 600]
+    size: [40, 1000]
+
+  # =========================
+  # MESA + SILLA 1
+  # =========================
+  - name: office_table_1_circle
+    type: circle
+    position: [450, 430]
+    radius: 60
+    z: 0.0
+    yaw_deg: 0.0
+
+  - name: office_chair_1
+    type: circle
+    position: [450, 545]
+    radius: 62
+    z: 0.0
+    yaw_deg: 180.0
+
+  # =========================
+  # MESA + SILLA 2
+  # =========================
+  - name: office_table_2_circle
+    type: circle
+    position: [900, 760]
+    radius: 60
+    z: 0.0
+    yaw_deg: 180.0
+
+  - name: office_chair_2
+    type: circle
+    position: [900, 645]
+    radius: 62
+    z: 0.0
+    yaw_deg: 0.0
+
+  # =========================
+  # PERSONAS ESTÁTICAS
+  # =========================
+  - name: person_1
+    type: circle
+    position: [650, 420]
+    radius: 35
+    sdf_path: "/home/vrs/GBP_ROS_WS/src/gbp_system/src/gbp_system/AdamSim/data/models/person_standing/model.sdf"
+    z: 0.0
+    yaw_deg: 90.0
+
+  - name: person_2
+    type: circle
+    position: [650, 780]
+    radius: 35
+    sdf_path: "/home/vrs/GBP_ROS_WS/src/gbp_system/src/gbp_system/AdamSim/data/models/person_standing/model.sdf"
+    z: 0.0
+    yaw_deg: -90.0

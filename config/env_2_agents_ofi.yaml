@@ -1,0 +1,64 @@
+world:
+  px_per_cm: 0.8
+  screen_w: 1400
+  screen_h: 1400
+  bg_color: [245, 245, 245]
+  fps: 60
+  steps: 12
+  step_plan_iters: 12
+
+agents:
+  - name: a0
+    radius: 25
+    start: [450, 300]
+    goal: [950, 1100]
+    color: [220, 50, 50]
+    path:
+      type: straight
+      num_points: 80
+
+  - name: a1
+    radius: 25
+    start: [950, 300]
+    goal: [500, 1100]
+    color: [50, 50, 220]
+    path:
+      type: straight
+      num_points: 80
+
+obstacles:
+  # Pared superior
+  - name: wall_top
+    type: rectangle
+    center: [700, 150]
+    size: [1040, 40]
+
+  # Pared inferior
+  - name: wall_bottom
+    type: rectangle
+    center: [700, 1250]
+    size: [1040, 40]
+
+  # Pared izquierda
+  - name: wall_left
+    type: rectangle
+    center: [200, 700]
+    size: [40, 1140]
+
+  # Pared derecha
+  - name: wall_right
+    type: rectangle
+    center: [1200, 700]
+    size: [40, 1140]
+
+  # Mesa (huella aprox del box de colisión en XY)
+  - name: office_table
+    type: rectangle
+    center: [500, 600]
+    size: [80, 43]
+
+  # Silla (huella aprox del box de colisión en XY)
+  - name: office_chair
+    type: rectangle
+    center: [850, 850]
+    size: [57, 80]

@@ -1,0 +1,94 @@
+
+
+##############################
+#### 4 OBSTACLES 4 AGENTS ####
+##############################
+
+## ENV 01 - TEST 05
+
+world:
+  px_per_cm: 0.8
+  screen_w: 1200
+  screen_h: 1200
+  bg_color: [245, 245, 245]
+  fps: 60
+  steps: 8
+  step_plan_iters: 12
+
+agents:
+  - name: a0
+    radius: 25
+    start: [300, 600]
+    goal: [900, 600]
+    color: [220, 50, 50]
+    path: {type: straight, num_points: 80}
+
+  - name: a1
+    radius: 25
+    start: [900, 520]
+    goal: [300, 520]
+    color: [50, 180, 50]
+    path: {type: straight, num_points: 80}
+
+  - name: a2
+    radius: 25
+    start: [600, 300]
+    goal: [600, 900]
+    color: [50, 50, 220]
+    path: {type: straight, num_points: 80}
+
+  - name: a3
+    radius: 25
+    start: [680, 900]
+    goal: [680, 300]
+    color: [220, 180, 50]
+    path: {type: straight, num_points: 80}
+
+obstacles:
+  # Pared superior
+  - name: wall_top
+    type: rectangle
+    center: [600, 150]
+    size: [940, 40]
+
+  # Pared inferior
+  - name: wall_bottom
+    type: rectangle
+    center: [600, 1050]
+    size: [940, 40]
+
+  # Pared izquierda
+  - name: wall_left
+    type: rectangle
+    center: [150, 600]
+    size: [40, 940]
+
+  # Pared derecha
+  - name: wall_right
+    type: rectangle
+    center: [1050, 600]
+    size: [40, 940]
+
+  # Obstáculo para a0
+  - name: obs_a0
+    type: circle
+    position: [750, 650]
+    radius: 35
+
+  # Obstáculo para a2
+  - name: obs_a2
+    type: circle
+    position: [500, 550]
+    radius: 35
+
+  # Obstáculo para a1
+  - name: obs_a1
+    type: circle
+    position: [750, 700]
+    radius: 35
+
+  # Obstáculo para a3
+  - name: obs_a3
+    type: circle
+    position: [500, 500]
+    radius: 35

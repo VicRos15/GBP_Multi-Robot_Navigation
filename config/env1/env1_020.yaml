@@ -1,0 +1,70 @@
+
+
+##############################
+#### 4 OBSTACLES 4 AGENTS ####
+##############################
+
+## ENV 01 - TEST 02
+
+world:
+  px_per_cm: 0.8
+  screen_w: 1200
+  screen_h: 1200
+  bg_color: [245, 245, 245]
+  fps: 60
+  steps: 8
+  step_plan_iters: 12
+
+agents:
+  - name: a0
+    radius: 25
+    start: [300, 300]
+    goal: [900, 850]
+    color: [220, 50, 50]
+    path: {type: straight, num_points: 80}
+
+  - name: a1
+    radius: 25
+    start: [900, 300]
+    goal: [300, 850]
+    color: [50, 180, 50]
+    path: {type: straight, num_points: 80}
+
+  - name: a2
+    radius: 25
+    start: [300, 900]
+    goal: [850, 300]
+    color: [50, 50, 220]
+    path: {type: straight, num_points: 80}
+
+  - name: a3
+    radius: 25
+    start: [900, 900]
+    goal: [350, 300]
+    color: [220, 180, 50]
+    path: {type: straight, num_points: 80}
+
+obstacles:
+  # Pared superior
+  - name: wall_top
+    type: rectangle
+    center: [600, 150]
+    size: [940, 40]
+
+  # Pared inferior
+  - name: wall_bottom
+    type: rectangle
+    center: [600, 1050]
+    size: [940, 40]
+
+  # Pared izquierda
+  - name: wall_left
+    type: rectangle
+    center: [150, 600]
+    size: [40, 940]
+
+  # Pared derecha
+  - name: wall_right
+    type: rectangle
+    center: [1050, 600]
+    size: [40, 940]

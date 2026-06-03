@@ -1,0 +1,28 @@
+# Python cache
+__pycache__/
+*/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+.venv/
+env/
+*.egg-info/
+
+# Generated results
+results/
+*.csv
+*.mp4
+*.avi
+
+# Large / external simulation assets not needed in pygame-core
+AdamSim/
+data/
+
+# OS / editors
+.DS_Store
+.vscode/
+.idea/

@@ -1,0 +1,59 @@
+##############################
+####  2 AGENTS CROSS TEST ####
+##############################
+
+world:
+  px_per_cm: 0.8
+  screen_w: 1400
+  screen_h: 1200
+  bg_color: [245, 245, 245]
+  fps: 60
+  steps: 8
+  step_plan_iters: 12
+
+  # PyBullet visual settings
+  wall_height_m: 3.0
+  floor_color: [0.78, 0.74, 0.68, 1.0]
+  wall_color: [0.82, 0.82, 0.80, 1.0]
+
+agents:
+  # =========================
+  # TURTLEBOT - LEFT AGENT
+  # =========================
+  - name: a0
+    radius: 25
+    start: [260, 720]
+    goal: [1080, 420]
+    color: [220, 50, 50]
+    urdf_path: "/home/vrs/GBP_ROS_WS/src/gbp_system/src/gbp_system/AdamSim/models/robot/rb1_base_description/robots/turtlebot.urdf"
+    path:
+      type: straight
+      num_points: 120
+
+  # =========================
+  # ADAM - RIGHT AGENT
+  # =========================
+  - name: a1
+    radius: 60
+    start: [1080, 420]
+    goal: [260, 720]
+    color: [50, 50, 220]
+    urdf_path: "/home/vrs/GBP_ROS_WS/src/gbp_system/src/gbp_system/AdamSim/models/robot/rb1_base_description/robots/robot.urdf"
+    yaw_offset_deg: 180.0
+    path:
+      type: straight
+      num_points: 120
+
+obstacles:
+
+  # =========================
+  # OBSTÁCULO PRINCIPAL
+  # Colocado abajo-izquierda respecto al cruce,
+  # para que lo detecte primero el agente de la izquierda.
+  # =========================
+  - name: main_obstacle
+    type: circle
+    position: [570, 710]
+    radius: 70
+    z: 0.0
+    yaw_deg: 0.0

@@ -1,0 +1,68 @@
+world:
+  px_per_cm: 0.8
+  screen_w: 1400
+  screen_h: 900
+  bg_color: [245, 245, 245]
+  fps: 60
+  steps: 12
+  step_plan_iters: 12
+
+agents:
+  - name: a0
+    radius: 25
+    start: [150, 450]
+    goal: [1250, 450]
+    color: [220, 50, 50]
+    path:
+      type: straight
+      num_points: 200
+
+  - name: a1
+    radius: 25
+    start: [1250, 550]
+    goal: [150, 550]
+    color: [50, 50, 220]
+    path:
+      type: straight
+      num_points: 200
+
+obstacles:
+  - name: dyn_obs_1
+    type: circle
+    position: [500, 400]
+    radius: 50
+    dynamic:
+      type: pingpong
+      axis: y
+      amplitude: 120
+      speed: 300
+
+  - name: dyn_obs_2
+    type: circle
+    position: [900, 400]
+    radius: 50
+    dynamic:
+      type: pingpong
+      axis: y
+      amplitude: 120
+      speed: 200
+
+  - name: dyn_obs_3
+    type: circle
+    position: [650, 600]
+    radius: 35
+    dynamic:
+      type: pingpong
+      axis: y
+      amplitude: 120
+      speed: 200
+
+  - name: dyn_obs_4
+    type: circle
+    position: [990, 600]
+    radius: 35
+    dynamic:
+      type: pingpong
+      axis: y
+      amplitude: 120
+      speed: 300

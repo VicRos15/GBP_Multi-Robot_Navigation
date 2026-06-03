@@ -1,0 +1,178 @@
+##############################
+#### 4 AGENTS  CLASSROOM  ####
+##############################
+
+world:
+  px_per_cm: 0.7
+  screen_w: 1400
+  screen_h: 1400
+  bg_color: [245, 245, 245]
+  fps: 60
+  steps: 8
+  step_plan_iters: 12
+
+agents:
+  - name: a0
+    radius: 25
+    start: [200, 700]
+    goal: [1200, 700]
+    color: [220, 50, 50]
+    path: {type: straight, num_points: 80}
+
+  - name: a1
+    radius: 25
+    start: [1200, 620]
+    goal: [200, 620]
+    color: [50, 50, 220]
+    path: {type: straight, num_points: 80}
+
+  - name: a2
+    radius: 25
+    start: [450, 200]
+    goal: [450, 1200]
+    color: [50, 180, 50]
+    path: {type: straight, num_points: 80}
+
+  - name: a3
+    radius: 25
+    start: [950, 1200]
+    goal: [950, 200]
+    color: [220, 140, 40]
+    path: {type: straight, num_points: 80}
+
+obstacles:
+  # =========================
+  # PAREDES DE LA HABITACIÓN
+  # =========================
+  - name: wall_top
+    type: rectangle
+    center: [700, 100]
+    size: [1200, 40]
+
+  - name: wall_bottom
+    type: rectangle
+    center: [700, 1300]
+    size: [1200, 40]
+
+  - name: wall_left
+    type: rectangle
+    center: [100, 700]
+    size: [40, 1240]
+
+  - name: wall_right
+    type: rectangle
+    center: [1300, 700]
+    size: [40, 1240]
+
+
+  # =========================
+  # PUPITRE CENTRAL SUPERIOR (pegado a pared)
+  # =========================
+  - name: office_table_top_center
+    type: circle
+    position: [700, 180]   # antes 250 → ahora mucho más arriba
+    radius: 60
+
+  - name: office_chair_top_center
+    type: circle
+    position: [700, 270]   # mantiene separación lógica
+    radius: 62
+
+  # =========================
+  # FILA SUPERIOR (4 puestos)
+  # =========================
+  - name: office_table_1_circle
+    type: circle
+    position: [320, 450]
+    radius: 60
+
+  - name: office_chair_1
+    type: circle
+    position: [320, 545]
+    radius: 62
+
+  - name: office_table_2_circle
+    type: circle
+    position: [580, 450]
+    radius: 60
+
+  - name: office_chair_2
+    type: circle
+    position: [580, 545]
+    radius: 62
+
+  - name: office_table_3_circle
+    type: circle
+    position: [840, 450]
+    radius: 60
+
+  - name: office_chair_3
+    type: circle
+    position: [840, 545]
+    radius: 62
+
+  - name: office_table_4_circle
+    type: circle
+    position: [1080, 450]
+    radius: 60
+
+  - name: office_chair_4
+    type: circle
+    position: [1080, 545]
+    radius: 62
+
+  # =========================
+  # FILA INFERIOR (4 puestos)
+  # =========================
+  - name: office_table_5_circle
+    type: circle
+    position: [320, 850]
+    radius: 60
+
+  - name: office_chair_5
+    type: circle
+    position: [320, 945]
+    radius: 62
+
+  - name: office_table_6_circle
+    type: circle
+    position: [580, 850]
+    radius: 60
+
+  - name: office_chair_6
+    type: circle
+    position: [580, 945]
+    radius: 62
+
+  - name: office_table_7_circle
+    type: circle
+    position: [840, 850]
+    radius: 60
+
+  - name: office_chair_7
+    type: circle
+    position: [840, 945]
+    radius: 62
+
+  - name: office_table_8_circle
+    type: circle
+    position: [1080, 850]
+    radius: 60
+
+  - name: office_chair_8
+    type: circle
+    position: [1080, 945]
+    radius: 62
+
+  # =========================
+  # PUPITRE CENTRAL INFERIOR (pegado a pared)
+  # =========================
+  - name: office_table_bottom_center
+    type: circle
+    position: [700, 1130]  # antes 1050 → ahora muy abajo
+    radius: 60
+
+  - name: office_chair_bottom_center
+    type: circle
+    position: [700, 1220]  # invertido (silla hacia dentro)
+    radius: 62

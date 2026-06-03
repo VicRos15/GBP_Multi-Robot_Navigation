@@ -1,0 +1,50 @@
+world:
+  px_per_cm: 1.2
+  screen_w: 1400
+  screen_h: 900
+  bg_color: [245, 245, 245]
+  fps: 60
+  steps: 6
+  step_plan_iters: 12
+
+agents:
+  - name: tb
+    radius: 20
+    start: [510, 140]
+    goal: [510, 660]
+    color: [0, 180, 0]
+    path:
+      type: curved
+      num_points: 50
+      arc_height: 80
+
+  - name: adam
+    radius: 71.8
+    start: [510, 660]
+    goal: [510, 140]
+    color: [0, 0, 220]
+    path:
+      type: curved
+      num_points: 50
+      arc_height: 80
+
+  - name: a2
+    radius: 20
+    start: [110, 660]
+    goal: [810, 140]
+    color: [220, 120, 0]
+    path:
+      type: curved
+      num_points: 50
+      arc_height: 80
+
+obstacles:
+  - name: cube_left
+    type: rectangle
+    center: [430, 300]
+    size: [40, 40]
+
+  - name: cyl_right
+    type: circle
+    position: [620, 450]
+    radius: 25
