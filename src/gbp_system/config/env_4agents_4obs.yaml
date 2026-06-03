@@ -1,0 +1,70 @@
+world:
+  px_per_cm: 0.8
+  screen_w: 1200
+  screen_h: 1200
+  bg_color: [245, 245, 245]
+  fps: 60
+  steps: 10
+  step_plan_iters: 12
+
+agents:
+  - name: a0
+    radius: 25
+    start: [600, 350]
+    goal: [600, 850]
+    color: [220, 50, 50]
+    path:
+      type: straight
+      num_points: 80
+
+  - name: a1
+    radius: 25
+    start: [850, 600]
+    goal: [350, 600]
+    color: [50, 180, 50]
+    path:
+      type: straight
+      num_points: 80
+
+  - name: a2
+    radius: 25
+    start: [600, 850]
+    goal: [600, 350]
+    color: [50, 50, 220]
+    path:
+      type: straight
+      num_points: 80
+
+  - name: a3
+    radius: 25
+    start: [350, 600]
+    goal: [850, 600]
+    color: [220, 180, 50]
+    path:
+      type: straight
+      num_points: 80
+
+obstacles:
+  # Más hacia fuera (arriba-izquierda)
+  - name: obs_c1
+    type: circle
+    position: [500, 500]
+    radius: 30
+
+  # Más hacia fuera (abajo-derecha)
+  - name: obs_c2
+    type: circle
+    position: [700, 700]
+    radius: 30
+
+  # Rectángulo ampliado y desplazado
+  - name: obs_r1
+    type: rectangle
+    center: [520, 720]
+    size: [40, 40]
+
+  # Rectángulo ampliado (este era el tuyo)
+  - name: obs_r2
+    type: rectangle
+    center: [720, 480]
+    size: [35, 35]

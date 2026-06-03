@@ -1,0 +1,94 @@
+world:
+  px_per_cm: 0.8
+  screen_w: 1400
+  screen_h: 1200
+  bg_color: [245, 245, 245]
+  fps: 60
+  steps: 6
+  step_plan_iters: 12
+
+agents:
+  - name: a0
+    radius: 25
+    start: [260, 150]
+    goal: [540, 1050]
+    color: [220, 50, 50]
+    path:
+      type: straight
+      num_points: 100
+
+  - name: a1
+    radius: 25
+    start: [540, 1050]
+    goal: [260, 150]
+    color: [50, 50, 220]
+    path:
+      type: straight
+      num_points: 100
+
+  - name: a2
+    radius: 25
+    start: [540, 150]
+    goal: [260, 1050]
+    color: [50, 180, 50]
+    path:
+      type: straight
+      num_points: 100
+
+  - name: a3
+    radius: 25
+    start: [260, 1050]
+    goal: [540, 150]
+    color: [220, 140, 40]
+    path:
+      type: straight
+      num_points: 100
+
+obstacles:
+  # =========================
+  # PAREDES DEL PASILLO
+  # =========================
+  - name: wall_left
+    type: rectangle
+    center: [60, 600]
+    size: [20, 1200]
+
+  - name: wall_right
+    type: rectangle
+    center: [740, 600]
+    size: [20, 1200]
+
+  # =========================
+  # PERSONAS ESTÁTICAS (4)
+  # =========================
+  - name: person_1
+    type: circle
+    position: [220, 400]
+    radius: 35
+    sdf_path: "/home/vrs/GBP_ROS_WS/src/gbp_system/src/gbp_system/AdamSim/data/models/person_standing/model.sdf"
+    z: 0.0
+    yaw_deg: 0.0
+
+  - name: person_2
+    type: circle
+    position: [520, 520]
+    radius: 35
+    sdf_path: "/home/vrs/GBP_ROS_WS/src/gbp_system/src/gbp_system/AdamSim/data/models/person_standing/model.sdf"
+    z: 0.0
+    yaw_deg: 180.0
+
+  - name: person_3
+    type: circle
+    position: [260, 720]
+    radius: 35
+    sdf_path: "/home/vrs/GBP_ROS_WS/src/gbp_system/src/gbp_system/AdamSim/data/models/person_standing/model.sdf"
+    z: 0.0
+    yaw_deg: 90.0
+
+  - name: person_4
+    type: circle
+    position: [500, 880]
+    radius: 35
+    sdf_path: "/home/vrs/GBP_ROS_WS/src/gbp_system/src/gbp_system/AdamSim/data/models/person_standing/model.sdf"
+    z: 0.0
+    yaw_deg: -90.0

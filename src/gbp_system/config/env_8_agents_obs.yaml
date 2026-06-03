@@ -1,0 +1,102 @@
+world:
+  px_per_cm: 0.6
+  screen_w: 1400
+  screen_h: 1400
+  bg_color: [245, 245, 245]
+  fps: 60
+  steps: 8
+  step_plan_iters: 12
+
+agents:
+  - name: a0
+    radius: 25
+    start: [1100, 600]
+    goal: [100, 600]
+    color: [220, 50, 50]
+    path:
+      type: straight
+      num_points: 80
+
+  - name: a1
+    radius: 25
+    start: [953.55, 953.55]
+    goal: [246.45, 246.45]
+    color: [50, 180, 50]
+    path:
+      type: straight
+      num_points: 80
+
+  - name: a2
+    radius: 25
+    start: [600, 1100]
+    goal: [600, 100]
+    color: [50, 50, 220]
+    path:
+      type: straight
+      num_points: 80
+
+  - name: a3
+    radius: 25
+    start: [246.45, 953.55]
+    goal: [953.55, 246.45]
+    color: [220, 180, 50]
+    path:
+      type: straight
+      num_points: 80
+
+  - name: a4
+    radius: 25
+    start: [100, 600]
+    goal: [1100, 600]
+    color: [180, 50, 180]
+    path:
+      type: straight
+      num_points: 80
+
+  - name: a5
+    radius: 25
+    start: [246.45, 246.45]
+    goal: [953.55, 953.55]
+    color: [50, 180, 180]
+    path:
+      type: straight
+      num_points: 80
+
+  - name: a6
+    radius: 25
+    start: [600, 100]
+    goal: [600, 1100]
+    color: [120, 120, 120]
+    path:
+      type: straight
+      num_points: 80
+
+  - name: a7
+    radius: 25
+    start: [953.55, 246.45]
+    goal: [246.45, 953.55]
+    color: [240, 120, 40]
+    path:
+      type: straight
+      num_points: 80
+
+obstacles:
+  - name: obs_top
+    type: circle
+    position: [600, 350]
+    radius: 30
+
+  - name: obs_right
+    type: circle
+    position: [850, 600]
+    radius: 30
+
+  - name: obs_bottom
+    type: circle
+    position: [600, 850]
+    radius: 30
+
+  - name: obs_left
+    type: circle
+    position: [350, 600]
+    radius: 30

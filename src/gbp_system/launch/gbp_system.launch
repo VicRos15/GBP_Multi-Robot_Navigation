@@ -1,0 +1,31 @@
+<launch>
+  <!-- Simulador: pg o pb -->
+  <arg name="sim" default="pg"/>
+
+  <!-- Nombre del yaml dentro de config -->
+  <arg name="env" default="env_2_agents.yaml"/>
+
+  <!-- Topic de salida del planner -->
+  <arg name="state_topic" default="/robots_state"/>
+
+  <!-- Planner -->
+  <node pkg="gbp_system"
+        type="gbp_planner_node.py"
+        name="gbp_planner"
+        output="screen">
+    <param name="sim" value="$(arg sim)"/>
+    <param name="env_yaml" value="$(find gbp_system)/config/$(arg env)"/>
+    <param name="state_topic" value="$(arg state_topic)"/>
+  </node>
+
+  <!-- PyBullet solo si sim == pb -->
+  <group if="$(eval arg('sim') == 'pb')">
+    <node pkg="gbp_system"
+          type="pb_sim_node.py"
+          name="pb_sim"
+          output="screen">
+      <param name="env_yaml" value="$(find gbp_system)/config/$(arg env)"/>
+      <param name="state_topic" value="$(arg state_topic)"/>
+    </node>
+  </group>
+</launch>
